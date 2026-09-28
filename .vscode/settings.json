@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "Twin-Stick-Clone.sln"
+    "dotnet.defaultSolution": "Twin-Stick-Shooter.sln"
 }
