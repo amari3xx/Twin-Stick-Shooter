@@ -467,6 +467,58 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &355039982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 355039984}
+  - component: {fileID: 355039983}
+  m_Layer: 0
+  m_Name: NPC Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &355039983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355039982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adeb40db453fe45b8a2727428c8c0824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NPCPrefab: {fileID: 6648340727555991425, guid: d6aad6b302fc34be3a3ec1e8343e75dc, type: 3}
+  m_maxNPCAmount: 10
+  m_NPCList: []
+  m_NPCSpeed: 5
+  m_playerLocation: {x: 0, y: 0}
+  m_verticalBounds: {x: 0, y: 0}
+  m_horizontalBounds: {x: 0, y: 0}
+  m_spawnPadding: 1
+--- !u!4 &355039984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355039982}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5029172, y: -0.28511024, z: -0.16847874}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &449451441
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,7 +799,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2121,9 +2173,10 @@ GameObject:
   - component: {fileID: 1546347606}
   - component: {fileID: 1546347605}
   - component: {fileID: 1546347608}
+  - component: {fileID: 1546347609}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2203,6 +2256,19 @@ MonoBehaviour:
   m_bulletPrefab: {fileID: 8515559975831047424, guid: 215bcad778a94496b871560b48cd2a68, type: 3}
   m_attackSpeed: 0
   m_fireMode: 0
+--- !u!114 &1546347609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546347604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423d7588af8324f68a4c9f9095e1fd83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_followSpeed: 1
 --- !u!1 &1626498882
 GameObject:
   m_ObjectHideFlags: 0
@@ -3217,3 +3283,4 @@ SceneRoots:
   - {fileID: 1983319390}
   - {fileID: 1080972199}
   - {fileID: 1546347607}
+  - {fileID: 355039984}
