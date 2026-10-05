@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerController))]
 
@@ -10,6 +11,8 @@ public class PlayerAttackController : MonoBehaviour
 
     public float m_attackSpeed;
 
+    Vector3 aimPosition;
+
     public enum m_FireMode
     {
         SemiAuto,
@@ -18,15 +21,12 @@ public class PlayerAttackController : MonoBehaviour
 
     void PlayerInput()
     {
-        Vector3 aimPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         aimPosition.z = 0;
 
-        Vector3 aimDirection = aimPosition - transform.position;
+        Vector3 aimDirection = aimPosition.normalized;
 
-        aimDirection = aimDirection.normalized;
-
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        if(aimPosition != Vector3.zero)
         {
             SpawnBullet(aimDirection);
         }
@@ -51,5 +51,10 @@ public class PlayerAttackController : MonoBehaviour
     void Update()
     {
         PlayerInput();
+    }
+
+    public void OnAttack(InputValue value)
+    {
+        aimPosition = value.Get<Vector2>();
     }
 }
